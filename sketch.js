@@ -10,7 +10,7 @@ function setup()
   engine = Engine.create();
   world = engine.world;
 
-  //ground = new Ground(390,305,240,20);
+  ground = new Ground(390,305,240,20);
 
   block1 = new Block(300,275,30,40);
   block2 = new Block(330,275,30,40);
@@ -32,7 +32,7 @@ function setup()
 
   block16 = new Block(390,155,30,40);
 
-  //ground2 = new Ground(690,225,180,20);
+  ground2 = new Ground(690,225,180,20);
 
   block17 = new Block(630,195,30,40);
   block18 = new Block(660,195,30,40);
@@ -48,14 +48,17 @@ function setup()
 
   polygon = new Polygon(75,200,25);
 
-  slingshot = new Slingshot(polygon.body,{x:75,y:200});
+  slingshot = new Slingshot(polygon.body,{x:100,y:200});
 }
 
 function draw() 
 {
   background(255,255,255); 
+
+
+  Engine.update(engine);
   
-  //ground.display();
+  ground.display();
 
   block1.display();
   block2.display();
@@ -77,7 +80,7 @@ function draw()
 
   block16.display();
 
-  //ground2.display();
+  ground2.display();
 
   block17.display();
   block18.display();
